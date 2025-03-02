@@ -17,8 +17,8 @@ const dates = Object.keys(groupedData).sort();
 
 // Helper functions for conditional colors
 const getStepsColor = (steps) => {
-  if (steps < 1000) return '#e74c3c';
-  if (steps < 2500) return '#f39c12';
+  if (steps < 500) return '#e74c3c';
+  if (steps < 1000) return '#f39c12';
   return '#27ae60';
 };
 
@@ -273,6 +273,7 @@ function App() {
                 <tr key={idx}>
                   <td>{record.time}</td>
                   <td style={{ color: getStepsColor(record.steps) }}>{record.steps}</td>
+                  {/* <td style={{ color: record.steps === 0 ? '#ffffff' : getStepsColor(record.steps) }}>{record.steps === 0 ? '-' : record.steps}</td> */}
                   <td style={{ color: getCaloriesColor(record.calories_burned) }}>{record.calories_burned}</td>
                   <td style={{ color: getOxygenColor(record.oxygen_saturation) }}>{record.oxygen_saturation}%</td>
                   <td style={{ color: getHeartRateColor(record.heart_rate) }}>{record.heart_rate}</td>
